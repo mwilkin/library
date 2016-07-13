@@ -66,16 +66,16 @@ describe(Author) do
     end
   end
 
-  # describe('.find') do
-  #   it('returns the author with the input id') do
-  #     book1 = Book.new({:id => nil, :title => 'Red'})
-  #     book2 = Book.new({:id => nil, :title => 'Green'})
-  #     book1.save()
-  #     book2.save()
-  #     expect(Book.find(book2.id)).to eq(book2)
-  #   end
-  # end
-  #
+  describe('.find') do
+    it('returns the author with the input id') do
+      author1 = Author.new({:id => nil, :name => 'Red'})
+      author2 = Author.new({:id => nil, :name => 'Green'})
+      author1.save()
+      author2.save()
+      expect(Author.find(author2.id)).to eq(author2)
+    end
+  end
+
   # describe('#==') do
   #   it('returns true if the objects @id and @title are equal') do
   #     book1 = Book.new({:id => nil, :title => 'Red'})

@@ -29,15 +29,15 @@ class Author
     authors
   end
 
-#   def self.find(id)
-#     book = DB.exec("SELECT * FROM books WHERE id = #{id}").first()
-#     return Book.new({id: book['id'].to_i, title: book['title']})
-#   end
-#
-#   def ==(other)
-#     (@id == other.id) && (@title == other.title)
-#   end
-#
+  def self.find(id)
+    author = DB.exec("SELECT * FROM authors WHERE id = #{id}").first()
+    return Author.new({id: author['id'].to_i, name: author['name']})
+  end
+
+  def ==(other)
+    (@id == other.id) && (@name == other.name)
+  end
+
 #   def update_title!(new_title)
 #     @title = new_title
 #     DB.exec("UPDATE books SET title = '#{@title}' WHERE id = #{@id}")
