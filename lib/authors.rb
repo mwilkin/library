@@ -20,15 +20,15 @@ class Author
     DB.exec("DELETE FROM authors WHERE id = #{@id};")
   end
 
-#   def self.all
-#     returned_books = DB.exec("SELECT * FROM books;")
-#     books = []
-#     returned_books.each do |book|
-#       books.push(Book.new({:id => book['id'], :title => book['title']}))
-#     end
-#     books
-#   end
-#
+  def self.all
+    authors = []
+    returned_authors = DB.exec("SELECT * FROM authors;")
+    returned_authors.each do |author|
+      authors.push(Author.new({:id => author['id'], :name => author['name']}))
+    end
+    authors
+  end
+
 #   def self.find(id)
 #     book = DB.exec("SELECT * FROM books WHERE id = #{id}").first()
 #     return Book.new({id: book['id'].to_i, title: book['title']})

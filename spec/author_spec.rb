@@ -54,18 +54,18 @@ describe(Author) do
     end
   end
 
-  # describe('.all') do
-  #   it('returns all books') do
-  #     book1 = Author.new({:id => nil, :title => 'Red'})
-  #     book2 = Book.new({:id => nil, :title => 'Green'})
-  #     book3 = Book.new({:id => nil, :title => 'Yellow'})
-  #     book1.save()
-  #     book2.save()
-  #     book3.save()
-  #     expect(Book.all().size).to eq(3)
-  #   end
-  # end
-  #
+  describe('.all') do
+    it('returns all authors') do
+      author1 = Author.new({:id => nil, :name => 'Tom'})
+      author2 = Author.new({:id => nil, :name => 'Dick'})
+      author3 = Author.new({:id => nil, :name => 'Harry'})
+      author1.save()
+      author2.save()
+      author3.save()
+      expect(Author.all().size).to eq(3)
+    end
+  end
+
   # describe('.find') do
   #   it('returns the author with the input id') do
   #     book1 = Book.new({:id => nil, :title => 'Red'})
