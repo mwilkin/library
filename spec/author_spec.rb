@@ -76,26 +76,26 @@ describe(Author) do
     end
   end
 
-  # describe('#==') do
-  #   it('returns true if the objects @id and @title are equal') do
-  #     book1 = Book.new({:id => nil, :title => 'Red'})
-  #     book1.save()
-  #     book2 = Book.find(book1.id)
-  #     expect(book1).to eq(Book.find(book2.id))
-  #   end
-  # end
-  #
-  # describe('#==') do
-  #   it('returns false if the objects @id and @title are not equal') do
-  #     book1 = Book.new({:id => nil, :title => 'Red'})
-  #     book1.save()
-  #     book2 = Book.find(book1.id)
-  #     book3 = Book.new({:id => nil, :title => 'Red'})
-  #     book3.save
-  #     expect(book1).not_to eq(Book.find(book3.id))
-  #   end
-  # end
-  #
+  describe('#==') do
+    it('returns true if the author objects @id and @title are equal') do
+      author1 = Author.new({:id => nil, :name => 'Red'})
+      author1.save()
+      author2 = Author.find(author1.id)
+      expect(author1).to eq(Author.find(author2.id))
+    end
+  end
+
+  describe('#==') do
+    it('returns false if the objects @id and @name are not equal') do
+      author1 = Author.new({:id => nil, :name => 'Red'})
+      author1.save()
+      author2 = Author.find(author1.id)
+      author3 = Author.new({:id => nil, :name => 'Red'})
+      author3.save
+      expect(author1).not_to eq(Author.find(author3.id))
+    end
+  end
+
   # describe('#update_title') do
   #   it('will change the title of the book') do
   #     book1 = Book.new({:id => nil, :title => 'Red'})
