@@ -16,4 +16,9 @@ class Book
     DB.exec("DELETE FROM books WHERE id > 0;")
   end
 
+  define_method(:delete) do
+    DB.exec("DELETE FROM books WHERE id = #{@id};")
+
+  end
+
 end

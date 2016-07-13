@@ -40,7 +40,16 @@ describe(Book) do
       result = DB.exec("SELECT * FROM books;")
       expect(result.values.size()).to eq(0)
     end
+  end
 
+  describe('#delete') do
+    it('deletes a book from the database') do
+      book = Book.new({:id => nil, :title => 'Green'})
+      book.save()
+      book.delete
+      result = DB.exec("SELECT id FROM books WHERE id = #{book.id};")
+      expect(result.values.size()).to eq(0)
+    end
   end
 
 end
