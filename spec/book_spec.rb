@@ -2,9 +2,9 @@ require('spec_helper')
 
 describe(Book) do
 
-  # before(:each) do
-  #   Book.clear()
-  # end
+  before(:each) do
+    Book.delete_all()
+  end
 
   describe('#initialize') do
     it('instantiates a book object') do
