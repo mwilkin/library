@@ -2,9 +2,9 @@ require('spec_helper')
 
 describe(Author) do
 
-  # before(:each) do
-  #   Author.delete_all()
-  # end
+  before(:each) do
+    Author.delete_all()
+  end
 
   describe('#initialize') do
     it('instantiates an author object') do
