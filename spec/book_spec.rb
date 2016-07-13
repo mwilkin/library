@@ -98,7 +98,7 @@ describe(Book) do
     it('will change the title of the book') do
       book1 = Book.new({:id => nil, :title => 'Red'})
       book1.save()
-      book1.update_title('Green')
+      book1.update_title!('Green')
       book2 = Book.find(book1.id)
       expect(book2.title).to eq('Green')
     end
