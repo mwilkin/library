@@ -52,4 +52,45 @@ describe(Book) do
     end
   end
 
+  describe('.all') do
+    it('returns all books') do
+      book1 = Book.new({:id => nil, :title => 'Red'})
+      book2 = Book.new({:id => nil, :title => 'Green'})
+      book3 = Book.new({:id => nil, :title => 'Yellow'})
+      book1.save()
+      book2.save()
+      book3.save()
+      expect(Book.all().size).to eq(3)
+    end
+  end
+
+  describe('.find') do
+    it('returns the book with the input id') do
+      book1 = Book.new({:id => nil, :title => 'Red'})
+      book2 = Book.new({:id => nil, :title => 'Green'})
+      book1.save()
+      book2.save()
+      expect(Book.find(book2.id)).to eq(book2)
+    end
+  end
+
+  describe('#==') do
+    it('returns true if the objects @id and @title are equal') do
+      book1 = Book.new({:id => nil, :title => 'Red'})
+      book1.save()
+      book2 = Book.find(book1.id)
+      expect(book1).to eq(Book.find(book2.id))
+    end
+  end
+
+  describe('#==') do
+    it('returns false if the objects @id and @title are not equal') do
+      book1 = Book.new({:id => nil, :title => 'Red'})
+      book1.save()
+      book2 = Book.find(book1.id)
+      book3 = Book.new({:id => nil, :title => 'Red'})
+      book3.save
+      expect(book1).not_to eq(Book.find(book3.id))
+    end
+  end
 end

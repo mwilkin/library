@@ -18,7 +18,23 @@ class Book
 
   define_method(:delete) do
     DB.exec("DELETE FROM books WHERE id = #{@id};")
-
   end
 
+  def self.all
+    returned_books = DB.exec("SELECT * FROM books;")
+    books = []
+    returned_books.each do |book|
+      books.push(Book.new({:id => book['id'], :title => book['title']}))
+    end
+    books
+  end
+
+  def self.find(id)
+    book = DB.exec("SELECT * FROM books WHERE id = #{id}").first()
+    return Book.new({id: book['id'].to_i, title: book['title']})
+  end
+
+  def ==(other)
+    (@id == other.id) && (@title == other.title)
+  end
 end
