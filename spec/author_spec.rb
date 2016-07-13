@@ -96,14 +96,13 @@ describe(Author) do
     end
   end
 
-  # describe('#update_title') do
-  #   it('will change the title of the book') do
-  #     book1 = Book.new({:id => nil, :title => 'Red'})
-  #     book1.save()
-  #     book1.update_title!('Green')
-  #     book2 = Book.find(book1.id)
-  #     expect(book2.title).to eq('Green')
-  #   end
-  #
-  # end
+  describe('#update_name') do
+    it('will change the name of the author') do
+      author1 = Author.new({:id => nil, :name => 'Red'})
+      author1.save()
+      author1.update_name!('Green')
+      author2 = Author.find(author1.id)
+      expect(author2.name).to eq('Green')
+    end
+  end
 end

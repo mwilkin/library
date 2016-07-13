@@ -38,9 +38,8 @@ class Author
     (@id == other.id) && (@name == other.name)
   end
 
-#   def update_title!(new_title)
-#     @title = new_title
-#     DB.exec("UPDATE books SET title = '#{@title}' WHERE id = #{@id}")
-#   end
-#
+  def update_name!(new_name)
+    @name = new_name
+    DB.exec("UPDATE authors SET name = '#{@name}' WHERE id = #{@id}")
+  end
 end
