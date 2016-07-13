@@ -16,10 +16,10 @@ class Author
     DB.exec("DELETE FROM authors;")
   end
 
-#   define_method(:delete) do
-#     DB.exec("DELETE FROM books WHERE id = #{@id};")
-#   end
-#
+  define_method(:delete) do
+    DB.exec("DELETE FROM authors WHERE id = #{@id};")
+  end
+
 #   def self.all
 #     returned_books = DB.exec("SELECT * FROM books;")
 #     books = []

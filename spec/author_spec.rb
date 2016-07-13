@@ -44,19 +44,19 @@ describe(Author) do
     end
   end
 
-  # describe('#delete') do
-  #   it('deletes a author from the database') do
-  #     book = Book.new({:id => nil, :name => 'Green'})
-  #     book.save()
-  #     book.delete
-  #     result = DB.exec("SELECT id FROM books WHERE id = #{book.id};")
-  #     expect(result.values.size()).to eq(0)
-  #   end
-  # end
-  #
+  describe('#delete') do
+    it('deletes a author from the database') do
+      author = Author.new({:id => nil, :name => 'Tom Clancy'})
+      author.save()
+      author.delete
+      result = DB.exec("SELECT id FROM authors WHERE id = #{author.id};")
+      expect(result.values.size()).to eq(0)
+    end
+  end
+
   # describe('.all') do
   #   it('returns all books') do
-  #     book1 = Book.new({:id => nil, :title => 'Red'})
+  #     book1 = Author.new({:id => nil, :title => 'Red'})
   #     book2 = Book.new({:id => nil, :title => 'Green'})
   #     book3 = Book.new({:id => nil, :title => 'Yellow'})
   #     book1.save()
@@ -67,7 +67,7 @@ describe(Author) do
   # end
   #
   # describe('.find') do
-  #   it('returns the book with the input id') do
+  #   it('returns the author with the input id') do
   #     book1 = Book.new({:id => nil, :title => 'Red'})
   #     book2 = Book.new({:id => nil, :title => 'Green'})
   #     book1.save()
