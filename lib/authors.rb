@@ -4,7 +4,7 @@ class Author
 
   define_method(:initialize) do |attributes|
     # @id = attributes[:id]
-    # @title = attributes[:name]
+    @name = attributes[:name]
   end
 
 #   define_method(:save) do

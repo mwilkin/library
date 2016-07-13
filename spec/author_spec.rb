@@ -13,10 +13,10 @@ describe(Author) do
     end
   end
 
-  #   it('instantiates a book with a title') do
-  #     book = Book.new({:title => 'Cat in the Hat'})
-  #     expect(book.title).to eq('Cat in the Hat')
-  #   end
+    it('instantiates a author with a name') do
+      author = Author.new({:name => 'Mark Twain'})
+      expect(author.name).to eq('Mark Twain')
+    end
   #
   #   it('instantiates a book with an id') do
   #     book = Book.new({:id => 1, :title => 'Red'})
