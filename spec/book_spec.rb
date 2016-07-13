@@ -27,10 +27,20 @@ describe(Book) do
     it('creates/stores book objects on the database') do
       book = Book.new({:id => nil, :title => 'Red'})
       book.save()
-      result = DB.exec("SELECT title FROM books WHERE title = 'Red'")
+      result = DB.exec("SELECT title FROM books WHERE title = 'Red';")
       expect(result.getvalue(0,0)).to eq('Red')
     end
   end
 
+  describe('.delete_all') do
+    it('deletes stored book objects on the database') do
+      book = Book.new({:id => nil, :title => 'Blue'})
+      book.save()
+      Book.delete_all
+      result = DB.exec("SELECT * FROM books;")
+      expect(result.values.size()).to eq(0)
+    end
+
+  end
 
 end
