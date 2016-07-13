@@ -22,18 +22,18 @@ describe(Author) do
       expect(author.id).not_to eq(nil)
     end
   end
-  #
-  # describe('#save') do
-  #   it('creates/stores book objects on the database') do
-  #     book = Book.new({:id => nil, :title => 'Red'})
-  #     book.save()
-  #     result = DB.exec("SELECT title FROM books WHERE title = 'Red';")
-  #     expect(result.getvalue(0,0)).to eq('Red')
-  #   end
-  # end
+
+  describe('#save') do
+    it('creates/stores author objects on the database') do
+      author = Author.new({:id => nil, :name => 'Dr. Seuss'})
+      author.save()
+      result = DB.exec("SELECT name FROM authors WHERE name = 'Dr. Seuss';")
+      expect(result.getvalue(0,0)).to eq('Dr. Seuss')
+    end
+  end
   #
   # describe('.delete_all') do
-  #   it('deletes stored book objects on the database') do
+  #   it('deletes stored author objects on the database') do
   #     book = Book.new({:id => nil, :title => 'Blue'})
   #     book.save()
   #     Book.delete_all
