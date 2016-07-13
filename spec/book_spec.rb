@@ -23,4 +23,14 @@ describe(Book) do
     end
   end
 
+  describe('#save') do
+    it('creates/stores book objects on the database') do
+      book = Book.new({:id => nil, :title => 'Red'})
+      book.save()
+      result = DB.exec("SELECT title FROM books WHERE title = 'Red'")
+      expect(result.getvalue(0,0)).to eq('Red')
+    end
+  end
+
+
 end
