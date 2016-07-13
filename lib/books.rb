@@ -13,7 +13,7 @@ class Book
   end
 
   define_singleton_method(:delete_all) do
-    DB.exec("DELETE FROM books WHERE id > 0;")
+    DB.exec("DELETE FROM books;")
   end
 
   define_method(:delete) do

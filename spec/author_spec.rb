@@ -31,20 +31,22 @@ describe(Author) do
       expect(result.getvalue(0,0)).to eq('Dr. Seuss')
     end
   end
-  #
-  # describe('.delete_all') do
-  #   it('deletes stored author objects on the database') do
-  #     book = Book.new({:id => nil, :title => 'Blue'})
-  #     book.save()
-  #     Book.delete_all
-  #     result = DB.exec("SELECT * FROM books;")
-  #     expect(result.values.size()).to eq(0)
-  #   end
-  # end
-  #
+
+  describe('.delete_all') do
+    it('deletes stored author objects on the database') do
+      author1 = Author.new({:id => nil, :name => 'Italo Calvino'})
+      author1.save()
+      author2 = Author.new({:id => nil, :name => 'Tom Clancy'})
+      author2.save()
+      Author.delete_all
+      result = DB.exec("SELECT * FROM authors;")
+      expect(result.values.size()).to eq(0)
+    end
+  end
+
   # describe('#delete') do
-  #   it('deletes a book from the database') do
-  #     book = Book.new({:id => nil, :title => 'Green'})
+  #   it('deletes a author from the database') do
+  #     book = Book.new({:id => nil, :name => 'Green'})
   #     book.save()
   #     book.delete
   #     result = DB.exec("SELECT id FROM books WHERE id = #{book.id};")

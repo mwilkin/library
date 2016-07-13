@@ -12,10 +12,10 @@ class Author
     @id = result.getvalue(0,0).to_i
   end
 
-#   define_singleton_method(:delete_all) do
-#     DB.exec("DELETE FROM books WHERE id > 0;")
-#   end
-#
+  define_singleton_method(:delete_all) do
+    DB.exec("DELETE FROM authors;")
+  end
+
 #   define_method(:delete) do
 #     DB.exec("DELETE FROM books WHERE id = #{@id};")
 #   end
