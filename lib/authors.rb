@@ -3,7 +3,7 @@ class Author
   attr_reader :name, :id
 
   define_method(:initialize) do |attributes|
-    # @id = attributes[:id]
+    @id = attributes[:id]
     @name = attributes[:name]
   end
 

@@ -11,18 +11,17 @@ describe(Author) do
       author = Author.new({:name => 'Mark Twain'})
       expect(author.class).to eq(Author)
     end
-  end
 
     it('instantiates a author with a name') do
       author = Author.new({:name => 'Mark Twain'})
       expect(author.name).to eq('Mark Twain')
     end
-  #
-  #   it('instantiates a book with an id') do
-  #     book = Book.new({:id => 1, :title => 'Red'})
-  #     expect(book.id).not_to eq(nil)
-  #   end
-  # end
+
+    it('instantiates a author with an id') do
+      author = Author.new({:id => 1, :name => 'Michael Creighton'})
+      expect(author.id).not_to eq(nil)
+    end
+  end
   #
   # describe('#save') do
   #   it('creates/stores book objects on the database') do
